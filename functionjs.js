@@ -12,8 +12,18 @@ function visualizzaTabella(){
         htmlstring+= "<tr><td align='center'>"+items[i].type+"</td><td align='center'>"+items[i].qta+"</td></tr>"
         //stringa.replace(item,items[i].type).replace(qta,items[i].qta);
     }
-    htmlstring+="</table>";
+    htmlstring+="</table> <h4 align='right'>Max Order Item : 30</h4>";
     document.write(htmlstring+"<br>");
     document.getElementById("tabella").innerHTML = htmlstring ;
     return htmlstring;
 }
+
+//fuznione per disegnare il form per ordinare 
+
+function getForms(){
+    htmlstring = "<input type='text' name='item' placeholder='item'>";
+    htmlstring+= "<input type='text' name='qta' placeholder='qta'>";
+    htmlstring+="<input type='button' name='order' value='send' onclick='ordina()'>";
+    document.getElementById("OrderForm").innerHTML = htmlstring ;
+}
+
