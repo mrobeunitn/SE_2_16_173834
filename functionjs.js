@@ -4,8 +4,7 @@ var items = [{"type":"Smartphone", "qta": 2 },{"type":"PC", "qta": 8 }];
 
 
 //funzione che mi ritorna la tabella precompilata
-function init
-Tabella(){
+function initTabella(){
     var table = document.getElementById("tabella");
     for(var i = 0 ; i < items.length; i++ ){
         var row = table.insertRow(-1); 
@@ -49,10 +48,11 @@ function hideButtonSize(){
 
 function ordina(){
     var item = document.getElementById("item").value;
-    var qta = document.getElementById("qta").value;
+    var qta = parseInt(document.getElementById("qta").value);
     var i =0;
     var trovato = false;
     var pos = 0;
+    //faccio una ricerca per vedere se trovo l'oggetto che l'utente ha deciso di ordinare
     while( i < items.length && trovato == false ){
         if(items[i].type === item){
             trovato = true;
@@ -62,13 +62,13 @@ function ordina(){
     }
     if(trovato == true){
         items[pos].qta += qta;
-        alert("Ordine effettuato");
+        alert("Ordine effettuato ");
+        //vado ad aggiornare la tabella in corrispondenza dell'oggetto già esistente
+        document.getElementById("tabella").rows[pos+1].cells[1].innerHTML =  items[pos].qta;
     }
-  /*  else{
+    else{
       var temp = {"type": item, "qta": qta};
       item.push(temp);
       alert("Ordine Effettuato");
-    }*/
-    visualizzaTabella();
+    }
 }
-
