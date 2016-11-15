@@ -4,8 +4,8 @@ var items = [{"type":"Smartphone", "qta": 2 },{"type":"PC", "qta": 8 }];
 
 
 //funzione che mi ritorna la tabella precompilata
-function visualizzaTabella(){
-    //mi creo una variabile stringa di html tag condegli indici. per ogni item dell'array vado a sostituire il relativo valore
+function init
+Tabella(){
     var table = document.getElementById("tabella");
     for(var i = 0 ; i < items.length; i++ ){
         var row = table.insertRow(-1); 
@@ -16,8 +16,18 @@ function visualizzaTabella(){
     }
 }
 
+//funzione per settare il placeholder del cambio maximum size
+
+function changeSize(){
+    maxvalue = parseInt(document.getElementById("mvalue").value);
+    document.getElementById("maxval").innerHTML = maxvalue;
+    var textf = document.getElementById("mvalue").placeholder;
+    textf.innerHTML = maxvalue;
+    //document.getElementById("mvalue").placeholder  = maxvalue;
+    
+}
 //fuznione per disegnare il form per ordinare 
-function getForms(){
+function getOrder(){
     hideButtonSize();
     document.getElementById("ordina").style.display ='block';
 }
@@ -54,11 +64,11 @@ function ordina(){
         items[pos].qta += qta;
         alert("Ordine effettuato");
     }
-    else{
+  /*  else{
       var temp = {"type": item, "qta": qta};
       item.push(temp);
       alert("Ordine Effettuato");
-    }
+    }*/
     visualizzaTabella();
 }
 

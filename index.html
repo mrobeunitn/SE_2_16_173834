@@ -8,7 +8,7 @@
             <tr><td><b>Object</b></td><td><b>Quantity</b></td></tr>
        </table>
        <div id="OrderForm" style="display:block">
-           <input type="button" onclick="get()" value="Ordia item">
+           <input type="button" onclick="getOrder()" value="Ordia item">
        </div>
         <div id="MaxSizeForm" style="display:block">
            <input type="button" onclick="getMaxSize()" value="Modifica MaxSize">
@@ -19,9 +19,10 @@
             <input type='button' name='order' value='send' onclick='ordina()'>
         </div>
         <div id ="maxsize" style="display:none">
-            <input type='text' id='item' placeholder='30' required>
-            <input type='button' name='order' value='Change' onclick='setMaxSize()'>
+            <input type='text' id='mvalue' placeholder='30' required>
+            <input type='button' name='order' value='Change' onclick='changeSize()'>
+            <h3 align='right'><div id="maxval">30</div></h3>
         </div>
-       <script>visualizzaTabella();</script>
+       <script>initTabella();</script>
     </body>
 </html> 
