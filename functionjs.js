@@ -1,5 +1,6 @@
 
 var maxvalue = 30;
+var count =0;
 var items = [{"type":"Smartphone", "qta": 2 },{"type":"PC", "qta": 8 }];
 
 
@@ -64,11 +65,28 @@ function ordina(){
         items[pos].qta += qta;
         alert("Ordine effettuato ");
         //vado ad aggiornare la tabella in corrispondenza dell'oggetto già esistente
+        count+=qta;
+        //notifico che è stata superata la max valueif()
+        if(count > maxvalue){
+              alert("Superata la quantità d'ordine");
+        }
         document.getElementById("tabella").rows[pos+1].cells[1].innerHTML =  items[pos].qta;
     }
     else{
+     //prendo i valori che ha inserito l'utente e aggiorno la tabella
       var temp = {"type": item, "qta": qta};
-      item.push(temp);
+      items.push(temp);
+      var table = document.getElementById("tabella");
+      var row = table.insertRow(-1);  
+      var cell1 = row.insertCell(0);
+      var cell2 = row.insertCell(1);
+      cell1.innerHTML = temp.type;
+      cell2.innerHTML = temp.qta;
+      count+=temp.qta;
+      //notifico che è stata superata la max valueif()
+      if(count >maxvalue){
+          alert("Superata la quantità d'ordine");
+      }
       alert("Ordine Effettuato");
     }
 }
