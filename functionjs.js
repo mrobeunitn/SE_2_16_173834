@@ -23,7 +23,8 @@ function changeSize(){
     document.getElementById("maxval").innerHTML = maxvalue;
     var textf = document.getElementById("mvalue").placeholder;
     textf.innerHTML = maxvalue;
-    //document.getElementById("mvalue").placeholder  = maxvalue;
+    //aggiorno di volta in volta il counter degli item selezionati
+    document.getElementById("counter").innerHTML = count;
     
 }
 //fuznione per disegnare il form per ordinare 
@@ -71,6 +72,8 @@ function ordina(){
               alert("Superata la quantità d'ordine");
         }
         document.getElementById("tabella").rows[pos+1].cells[1].innerHTML =  items[pos].qta;
+        document.getElementById("counter").innerHTML = count;
+    
     }
     else{
      //prendo i valori che ha inserito l'utente e aggiorno la tabella
@@ -88,5 +91,7 @@ function ordina(){
           alert("Superata la quantità d'ordine");
       }
       alert("Ordine Effettuato");
+      document.getElementById("counter").innerHTML = count;
+    
     }
 }
