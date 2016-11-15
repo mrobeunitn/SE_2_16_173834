@@ -18,6 +18,7 @@ function visualizzaTabella(){
 
 //fuznione per disegnare il form per ordinare 
 function getForms(){
+    hideButtonSize();
     document.getElementById("ordina").style.display ='block';
 }
 //nascondo il form ordina
@@ -25,12 +26,13 @@ function hideButtonOrdina(){
      document.getElementById("ordina").style.display ='none';
 }
 //visualizzo bottone per generare il campo per modificare qta max
-function getForm(){
-    document.getElementById("ordina").style.display ='block';
+function getMaxSize(){
+    hideButtonOrdina();
+    document.getElementById("maxsize").style.display ='block';
 }
 //nascondo qta max generator
-function hideButtonOrdina(){
-     document.getElementById("ordina").style.display ='none';
+function hideButtonSize(){
+     document.getElementById("maxsize").style.display ='none';
 }
 
 //funzione per la gestione dell'ordinee
